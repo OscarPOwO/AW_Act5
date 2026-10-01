@@ -1,0 +1,387 @@
+@font-face {
+    font-family: 'MonseDescargada';
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+/*Variables*/
+:root{
+    --color_principal: #004b87;
+    --color_secundario: #00a859;
+    --color_oscuro: #2b2b2b;
+    --color_claro: #ffffff;
+    --color_fondo: #f4f7f6;
+    --color_borde: #e0e0e0;
+    
+    /*Tipografia en linea para titulos*/
+    --fuente_titulos: 'Open Sans', sans-serif;
+
+    /*Tipografia descargada (local) para cuerpo de texto*/
+    --fuente_cuerpo: 'MonseDescargada', arial,sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color_fondo);
+    color: var(--color_oscuro);
+    line-height: 1.6;
+    font-family: var(--fuente_cuerpo);
+}
+
+h1,h2,h3{
+    font-family: var(--fuente_titulos);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+} 
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--color_oscuro);
+    font-family: var(--fuente_titulos);
+}
+
+header{
+    background-color: var(--color_claro);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#logo h1{
+    color: var(--color_principal);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.menu ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu a{
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.menu a:hover{
+    color: var(--color_principal);
+}
+
+.btn_destacado, .btn_accion{
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+ .btn_destacado{
+    background-color: var(--color_principal);
+    color: var(--color_claro);
+ }
+
+ .btn_accion{
+    background-color: var(--color_secundario);
+    color: var(--color_claro);
+ }
+  .btn_accion:hover{
+    background-color: var(--color_principal);
+    color: var(--color_claro);
+ }
+ 
+/*HERO*/
+.hero{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+.hero_contenido, .hero_imagen{
+    flex: 1 1 300px; /*crecer, reducir, tamaño base */
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero_contenido h2{
+    font-size: 2.4rem;
+    color: var(--color_principal);
+    line-height: 1.2;
+}
+
+.hero_contenido p{
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*GRID DE CURSOS*/
+#catalogo{
+    padding: 40px 0;
+}
+
+#catalogo h2{
+    text-align: center;
+    color: var(--color_principal);
+}
+
+.grid_cursos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.tarjeta_curso{
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 8px;
+    flex: 1 1 280px; /*grow, shrink, basis*/
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    /*Aqui efecto*/
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.tarjeta_curso:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.tarjeta_curso img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.info_curso{
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.info_curso h3{
+    font-size: 1.3rem;
+    color: var(--color_principal);
+}
+.info_curso p{
+    margin-bottom: 15px;
+    flex-grow: 1;
+    color: var(--color_oscuro);
+}
+.nivel{
+    background-color: var(--color_fondo);
+    color: var(--color_principal);
+    font-family: var(--fuente_titulos);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+/*footer*/
+footer{
+    background-color: var(--color_oscuro);
+    color: var(--color_claro);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/*Cursos*/
+#cursos_pagina h2,
+#mentoria h2,
+#inscripcion h2{
+    text-align: center;
+    color: var(--color_principal);
+    margin-bottom: 10px;
+}
+.descripcion_pagina{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.grid_catalogo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.curso_catalogo{
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 8px;
+    flex: 1 1 230px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.curso_catalogo:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.curso_catalogo img{
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+.info_catalogo{
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.institucion_curso{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.logo_institucion{
+    background-color: var(--color_principal);
+    color: var(--color_claro);
+    padding: 5px 7px;
+    border-radius: 50%;
+    font-family: var(--fuente_titulos);
+}
+.instructor{
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+.info_catalogo h3{
+    color: var(--color_principal);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.estrellas{
+    color: #e3a008;
+    margin-bottom: 15px;
+}
+.estrellas span{
+    color: var(--color_oscuro);
+}
+.datos_curso{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+}
+.tipo_curso{
+    font-size: 0.75rem;
+    color: var(--color_oscuro);
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+/*Mentoria*/
+.mentoria_contenido{
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+.mentoria_info, .video_mentoria{
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 8px;
+    padding: 25px;
+}
+.mentoria_info{
+    flex: 1;
+}
+.video_mentoria{
+    flex: 1;
+}
+.mentoria_info h3,
+.video_mentoria h3{
+    color: var(--color_principal);
+    margin-bottom: 10px;
+}
+.mentoria_info p{
+    margin-bottom: 20px;
+}
+.reglas_mentoria{
+    list-style: disc;
+    padding-left: 20px;
+}
+.reglas_mentoria li{
+    margin-bottom: 8px;
+}
+.video_mentoria iframe{
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/*Inscripcion*/
+.formulario{
+    background-color: var(--color_claro);
+    border: 1px solid var(--color_borde);
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.formulario label{
+    font-family: var(--fuente_titulos);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario select{
+    padding: 10px;
+    border: 1px solid var(--color_borde);
+    border-radius: 6px;
+    font-family: var(--fuente_cuerpo);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.formulario input:focus,
+.formulario select:focus{
+    outline: 2px solid var(--color_principal);
+    border-color: var(--color_principal);
+}
+.formulario .check{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.formulario button{
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: var(--fuente_titulos);
+}
